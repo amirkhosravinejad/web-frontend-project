@@ -1,0 +1,358 @@
+#Headerdiv {
+    position: relative;
+    left: 50px;
+  /* we have 50 px gap from left and right */
+    width: calc(100% - 100px);
+  /* border: 1px solid black; */
+  /* background-color: rgb(0, 157, 255); */
+
+    padding: 5px;
+    text-align: left;
+}
+
+@keyframes comeToCenter {
+    0%   {left: 0px; }
+    100% {left: calc(40%); }
+}
+
+#Title {
+    font-size: x-large;
+    position: absolute;
+    /* center the text vertically */
+    top: calc(40%);
+    left: calc(40%);
+    color: white;
+    /* define animation and duration */
+    animation-name: comeToCenter;
+    animation-duration: 3s;
+}
+
+.image {
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    border-color: white;
+}
+
+#See-Related {
+    position: absolute;
+    top: calc(70%);
+    width: fit-content;
+    background-color: antiquewhite;
+    height: 40px;
+    left: calc(40%);
+    border-radius: 10px;
+    border-color: white;
+}
+
+#See-Related:hover {
+    /* position: absolute;
+    top: calc(65%);
+    width: fit-content;
+    height: 40px;
+    left: calc(40%); */
+    background-color: aquamarine;
+    /* border-radius: 10px;
+    border-color: white; */
+}
+
+.Lectures { 
+  /* margin-top: 51px; */
+    background: linear-gradient(to right, transparent, rgba(182, 24, 187, 0.4), rgba(44, 142, 5, 0.5), blue),
+    url("img/Background.jpg");
+    /* background-size: cover; */
+    position: absolute;
+  /* display: block; */
+    top: 820px;
+    left: 50px;
+  /* we have 50 px gap from left and right */
+    width: calc(100% - 100px);
+    background-size: 100% 120%;
+    background-repeat: no-repeat; 
+    height: 600px;
+    border: 1px solid black;
+  /* background-color: rgb(0, 157, 255); */
+    padding: 5px;
+    opacity: 0.83;
+    text-align: left;
+}
+
+.Lecture {
+  position: relative;
+    width: calc(25% - 10px);
+    float: left;
+    top: calc(25%);
+
+    /* display: inline; */
+    background-color: rgb(244, 241, 234);
+    border-radius: 5px;
+    border-color: black;
+    margin-right: 10px;
+    height: 300px;
+    text-align: center;
+    transition: width , height ;
+    opacity: 0.6;
+    /* perspective: 10px; */
+    /* z-index: 1; */
+    /* padding-left: 5px; */
+}
+
+.Lecture:hover {
+    width: 200px;
+    float: left;
+    /* top: calc(50%); */
+    top: 50%;
+    /* display: inline; */
+    background-color: rgb(244, 241, 234);
+    border-radius: 5px;
+    border-color: black;
+    margin-right: 10px;
+    height: 400px;
+    text-align: center;
+    opacity: 0.6;
+    /* transform: rotateZ(150dg); */
+    /* z-index: 1; */
+    /* padding-left: 5px; */
+}
+
+.LectureDiscript {
+    padding: 5px;    
+} 
+
+.relatedBooks { 
+  /* margin-top: 51px; */
+    position: absolute;
+    top: 1450px;
+    left: 50px;
+  /* we have 50 px gap from left and right */
+    width: calc(100% - 100px);
+    border: 1px solid black;
+  
+    /* background-color: rgb(0, 157, 255); */
+    padding: 5px;
+    text-align: left;
+}
+
+#related-book-title {
+    text-align: center;
+    font: Verdana;
+    font-size: larger;
+    color: blue;
+}
+#related-book-title:hover {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.Book {
+    width: calc(33% - 10px);
+    float: left;
+    /* background-color: aqua; */
+    /* border-radius: 2px; */
+    border-color: black;
+    margin-right: 10px;
+    /* padding-left: 5px; */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    /* transition: 0.3s; */
+    height: 500px;
+}
+
+.book-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.Book:hover .book-inner {
+  transform: rotateY(180deg);
+  perspective: 1000;
+}
+
+.front-Book, .back-Book {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.front-Book {
+  background-color: #bbb;
+  color: black;
+}
+
+.back-Book {
+  background-color: #29b9b6;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.buy-book {
+  position: absolute;
+  margin-top: 100px;
+  color: white;
+  left: calc(32%);
+  width: 100px;
+  background-color: rgb(7, 42, 130);
+  border-radius: 9px;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.buy-book:hover {
+  box-shadow: 0px 0px 25px 10px #2b2f2a;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* height: fit-content; */
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  z-index: 1;
+  opacity: 0;
+}
+
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  height: 450px;
+  width: 30%;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.popup .close {
+  position: absolute;
+  top: calc(1%);
+  left: calc(95%);
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+.popup .close:hover {
+  color:rgba(227, 8, 154, 0.774);
+}
+
+.popup .content {
+  /* float: right; */
+  height: fit-content;
+  overflow: auto;
+}
+
+#book-image-in-popup {
+  /* position: absolute; */
+  /* top: calc(10%); */
+  width: calc(30%);
+  border: purple;
+  border-radius: 12px;
+  /* height: calc(60%); */
+}
+
+#Book-discript {
+  float: right;
+  width: calc(70% - 10px);
+  /* padding-bottom: 20px; */
+}
+
+#Buy-now-button {
+  /* margin-top: 10px; */
+  position: absolute;
+  color: wheat;
+  background: linear-gradient(to right, purple , blue);
+  top: calc(90%);
+  left: calc(45%);
+  height: 30px;
+  width: 70px;
+  border-radius: 7px;
+  text-align: center;
+}
+
+#Buy-now-button:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: rgba(255,255,255,0.4);
+	-webkit-transition: none;
+	   -moz-transition: none;
+	        transition: none;
+}
+#Buy-now-button:hover:after {
+  width: 120%;
+  background-color: rgba(255,255,255,0);
+  
+	-webkit-transition: all 0.4s ease-in-out;
+	   -moz-transition: all 0.4s ease-in-out;
+	        transition: all 0.4s ease-in-out;
+}
+
+#bookPrice{
+  color: green;
+}
+
+.Bookdetail {
+    text-align: center;
+}
+
+.FooterContainer { 
+    /* margin-top: 51px; */
+    position: absolute;
+    top: 2060px;
+    left: 50px;
+    /* we have 50 px gap from left and right */
+    width: calc(100% - 100px);
+    border: 1px solid black;
+    background-color: rgb(29, 33, 35);
+    padding: 5px;
+    text-align: left;
+}
+  
+.Footer {
+    width: calc(50% - 130px);
+    float: left;
+    /* background-color: aqua; */
+      /* border-radius: 2px; */
+    border-color: black;
+    margin-left: 100px;
+      /* padding-left: 5px; */
+}
+.other-link {
+    margin-left: 13px;
+    color: white;
+}
+
+.other-link:hover {
+    color: chocolate;
+}
+
+.menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: calc(93.5%);
+}
+
+.menu:checked {
+  display: contents;
+  width: calc(100%);
+  height: calc(100%);
+  background: linear-gradient(to right, purple, blue);
+}
