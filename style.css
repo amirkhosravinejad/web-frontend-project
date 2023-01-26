@@ -34,12 +34,16 @@
 }
 
 #See-Related {
+    /* remove underline from link */
+    text-decoration: none;
     position: absolute;
     top: calc(70%);
     width: fit-content;
     background-color: antiquewhite;
-    height: 40px;
+    padding-top: 10px;
+    height: 30px;
     left: calc(40%);
+    color: rgb(50, 24, 128);
     border-radius: 10px;
     border-color: white;
 }
@@ -100,7 +104,7 @@
     width: 200px;
     float: left;
     /* top: calc(50%); */
-    top: 50%;
+    /* top: 50%; */
     /* display: inline; */
     background-color: rgb(244, 241, 234);
     border-radius: 5px;
@@ -110,7 +114,7 @@
     text-align: center;
     opacity: 0.6;
     /* transform: rotateZ(150dg); */
-    /* z-index: 1; */
+    z-index: 3;
     /* padding-left: 5px; */
 }
 
@@ -190,6 +194,7 @@
 }
 
 .buy-book {
+  text-decoration: none;
   position: absolute;
   margin-top: 100px;
   color: white;
@@ -232,13 +237,14 @@
   height: 450px;
   width: 30%;
   position: relative;
+  border:purple;
   transition: all 0.3s ease-in-out;
 }
 
 .popup .close {
   position: absolute;
-  top: calc(1%);
-  left: calc(95%);
+  top: calc(0%);
+  left: calc(94%);
   transition: all 200ms;
   font-size: 30px;
   font-weight: bold;
@@ -271,7 +277,7 @@
 }
 
 #Buy-now-button {
-  /* margin-top: 10px; */
+  text-decoration: none;
   position: absolute;
   color: wheat;
   background: linear-gradient(to right, purple , blue);
@@ -295,6 +301,7 @@
 	   -moz-transition: none;
 	        transition: none;
 }
+
 #Buy-now-button:hover:after {
   width: 120%;
   background-color: rgba(255,255,255,0);
@@ -335,6 +342,7 @@
       /* padding-left: 5px; */
 }
 .other-link {
+  text-decoration: none;
     margin-left: 13px;
     color: white;
 }
@@ -343,16 +351,82 @@
     color: chocolate;
 }
 
-.menu {
-  display: none;
+#menu {
+  visibility: hidden;
+  width: fit-content;
+  height: fit-content;
   position: fixed;
   top: 0;
-  left: calc(93.5%);
+  left: calc(90%);
 }
 
-.menu:checked {
-  display: contents;
+#change-menu-icon {
+  /* display: none; */
+  background: url("img/menu-icon.jpg");
+  width: 100px;
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  height: 100px;
+  position: fixed;
+  top: 0px;
+  left: 90%; 
+}
+/* when checkbox is checked, the menu icon changes */
+#menu:checked ~ #change-menu-icon {
+  background: url("img/close-icon.png");
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  z-index : 1;
+}
+
+/* #change-menu-icon:hover {
+
+} */
+
+#menu-list-label {
+  visibility: hidden;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: fit-content;
+  height: fit-content;
+}
+
+#menu:checked ~ #menu-list-label {
+  visibility: visible;
+  background: linear-gradient(to right, rgb(220, 6, 220) , rgb(8, 8, 190));
+  /* display: contents; */
+  position: fixed;
+  color:#fff;
   width: calc(100%);
   height: calc(100%);
-  background: linear-gradient(to right, purple, blue);
+  left: 0px;
+  top:0px;
+}
+
+.menuList {
+  left: 0px;
+  top: calc(45%);
+}
+
+#menu-item-link {
+  position: relative;
+  color:#fff;
+  text-decoration: none;
+  /* left: 0px;
+  top: 0px;
+  padding-bottom: 10px; */
+  height: calc(100%);
+}
+
+.menu-item-link:active .menuList{
+  visibility: hidden;
+}
+#menu:checked ~ .menuList{
+  visibility: hidden;
+}
+
+#menu-item-link:hover{
+  background-color: rgba(0, 0, 0, 0.1);
 }
